@@ -16,237 +16,73 @@
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-        }
-        /* Sticky Navbar */
-        .navbar {
-            position: sticky;
-            top: 0;
-            background-color: rgba(11, 11, 12, 0.95);
-            backdrop-filter: blur(12px);
-            padding: 18px 5%;
-            display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #1e1e24;
-            z-index: 1000;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 600px;
         }
         .logo {
-            font-size: 1.6rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #ff4757;
             text-decoration: none;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            display: inline-block;
         }
         .logo span {
             color: #ffffff;
         }
-        .nav-links a {
-            color: #a4b0be;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: #ff4757;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 5% 60px 5%;
-            text-align: center;
-            background: radial-gradient(circle at center, #1e1214 0%, #0b0b0c 70%);
-        }
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            background: linear-gradient(45deg, #ff4757, #ff6b81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            color: #a4b0be;
-            font-size: 1.4rem;
-            max-width: 700px;
-            margin: 0 auto 35px auto;
-            line-height: 1.6;
-        }
-        .btn-primary {
-            background-color: #ff4757;
-            color: white;
-            padding: 14px 35px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        .btn-primary:hover {
-            background-color: #ff6b81;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
-        }
-
-        /* Main Content Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            width: 100%;
-        }
-
-        /* Section Title */
-        .section-title {
-            font-size: 2.2rem;
+        h1 {
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: #ff4757;
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Games Grid Section */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-        .game-card {
-            background-color: #121214;
-            border: 1px solid #1e1e24;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .game-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff4757;
-        }
-        .game-thumb {
-            width: 100%;
-            height: 180px;
-            background-color: #1c1c1f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #57606f;
-            font-size: 3rem;
-        }
-        .game-info {
-            padding: 20px;
-        }
-        .game-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-        .game-info p {
-            color: #a4b0be;
-            font-size: 0.95rem;
-            line-height: 1.4;
             margin-bottom: 15px;
+            letter-spacing: -0.5px;
         }
-        .btn-secondary {
-            color: #ff4757;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
+        p {
+            color: #a4b0be;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
         }
-        .btn-secondary:hover {
-            color: #ff6b81;
+        /* Ek simple loader element */
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #1e1e24;
+            border-top: 3px solid #ff4757;
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: spin 1s linear infinite;
         }
-
-        /* Footer */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         footer {
-            background-color: #050506;
-            text-align: center;
-            padding: 25px;
+            position: absolute;
+            bottom: 20px;
             color: #57606f;
-            font-size: 0.9rem;
-            border-top: 1px solid #1e1e24;
-            margin-top: auto;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- STICKY NAVBAR -->
-    <nav class="navbar">
-        <a href="#" class="logo">Endless<span>PlayPoint</span></a>
-        <div class="nav-links">
-            <a href="#" class="active">Home</a>
-            <a href="#">Games</a>
-            <a href="#">Leaderboard</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </div>
-    </nav>
+    <div class="container">
+        <div class="logo">Endless<span>PlayPoint</span></div>
+        <h1>Something Epic is Brewing</h1>
+        <p>We are currently building the ultimate digital arena. No distractions, no filler—just pure gaming. Stay tuned.</p>
+        <div class="loader"></div>
+    </div>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <h1>Endless Play Point</h1>
-        <p>Welcome to the ultimate digital arena. Discover epic HTML5 games, track your high scores, and experience endless entertainment directly in your browser.</p>
-        <a href="#" class="btn-primary">Explore Games</a>
-    </header>
-
-    <!-- MAIN INTERACTIVE ZONE -->
-    <main class="container">
-        
-        <h2 class="section-title">Featured Games</h2>
-        
-        <div class="games-grid">
-            <!-- Game Card 1 -->
-            <div class="game-card">
-                <div class="game-thumb">🕹️</div>
-                <div class="game-info">
-                    <h3>Epic Retro Racer</h3>
-                    <p>Beat the clock and dodge heavy traffic in this fast-paced neon arcade driving experience.</p>
-                    <a href="#" class="btn-secondary">Play Now &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Game Card 2 -->
-            <div class="game-card">
-                <div class="game-thumb">🧩</div>
-                <div class="game-info">
-                    <h3>Mind Block Puzzle</h3>
-                    <p>Challenge your brain with endless block-matching grids. Perfect strategy equals high scores.</p>
-                    <a href="#" class="btn-secondary">Play Now &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Game Card 3 -->
-            <div class="game-card">
-                <div class="game-thumb">⚔️</div>
-                <div class="game-info">
-                    <h3>Shadow Arena</h3>
-                    <p>An action-packed 2D brawler where precision timing and fast reflexes keep you alive.</p>
-                    <a href="#" class="btn-secondary">Play Now &rarr;</a>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Endless Play Point. All Rights Reserved.</p>
+        &copy; 2026 Endless Play Point. All Rights Reserved.
     </footer>
 
 </body>
